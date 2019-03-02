@@ -8,7 +8,7 @@
 
 }
 
-.giphyDiv, .gifFavDiv{
+.giphyDiv, .gifFavDiv, .themeDiv{
     
     height: 400px;
     overflow-y: scroll;
