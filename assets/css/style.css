@@ -20,11 +20,22 @@
 
 img{
     margin: 2px;
-    width: 90%;
-    
+    width: 90%;  
 }
 
-/*    */
+.parent{
+    overflow: hidden;
+}
+
+.parent .favDiv{
+    float: left;
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.saveDiv{
+    margin-top: 40px;
+}
 
 .star {
     visibility:hidden;
