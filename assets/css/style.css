@@ -1,0 +1,16 @@
+.theme-btns .btn{
+    width: 100%;
+    margin: 5px;
+    outline: none;
+
+}
+
+button:focus {
+    outline: none;
+}
+
+img{
+    float: left;
+    margin: 2px;
+    width: 30%;
+}
