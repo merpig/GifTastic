@@ -1,16 +1,42 @@
+.theme-btns{
+    height: max-content;
+}
+
 .theme-btns .btn{
-    width: 100%;
+    
     margin: 5px;
-    outline: none;
 
 }
 
-button:focus {
-    outline: none;
+.giphyDiv, .gifFavDiv{
+    
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.imgDiv{
+    border-left: 1px solid #f5f5f5;
 }
 
 img{
-    float: left;
     margin: 2px;
-    width: 30%;
+    width: 90%;
+    
+}
+
+/*    */
+
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.star:before {
+   content: "\2606";
+   position: absolute;
+   visibility:visible;
+}
+.star:checked:before {
+   content: "\2605";
+   position: absolute;
 }
