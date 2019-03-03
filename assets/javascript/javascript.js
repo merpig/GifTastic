@@ -25,9 +25,11 @@ var queryURL ="https://api.giphy.com/v1/gifs/random?";
 // gif counter to ensure unique id's
 var gifCount = 0;
 
-//Before working on this function, make sure to add appropriate tags to achieve sorting
+// Contains all sorting algorithms for favorited gifs
  function organizeBy(myStr){
-    event.preventDefault();
+    //event.preventDefault();
+
+    // Prevent errors if localstorage is empty
     try {
         favoritesTags = JSON.parse(localStorage.getItem("favoriteTagList"));
         favorites = JSON.parse(localStorage.getItem("favoriteList"));
@@ -47,8 +49,6 @@ var gifCount = 0;
                     'dateAdded': favoritesTags[j][4],
                     'timeAdded': favoritesTags[j][5],
                     });
-
-    //console.log(list);
 
     switch (myStr) { 
 
@@ -100,6 +100,7 @@ var gifCount = 0;
                 return ((a.theme > b.theme) ? -1 : ((a.theme == b.theme) ? 0 : 1));
             });
             break;
+
         case 'ThemeZA': 
             console.log("Sorted by theme z-a");
             list.sort(function(a, b) {
@@ -111,6 +112,8 @@ var gifCount = 0;
             console.log('No sorting option selected');
     }
     //console.log(list);
+
+    // Separate the merged array back into respective arrays, now sorted!
     for (var k = 0; k < list.length; k++) {
         favorites[k] = list[k].favorites;
         favoritesTags[k][0] = list[k].title;
@@ -120,6 +123,8 @@ var gifCount = 0;
         favoritesTags[k][4] = list[k].dateAdded;
         favoritesTags[k][5] = list[k].timeAdded;
     }
+
+    // Store the sorted array back in localStorage, clear div, and redraw
     localStorage.setItem("favoriteList",JSON.stringify( favorites ));
     localStorage.setItem("favoriteTagList",JSON.stringify( favoritesTags ));
     $(".gifFavDiv").html("");
@@ -137,11 +142,13 @@ function giphyThemes(element) {
         //console.log(response);
         gifCount++;
         
+        // Store useful tags
         var giphyLink = response.data.image_url;
         var giphyTitle= response.data.title;
         var giphyDateC= response.data.import_datetime.slice(0,10);
         var giphyTimeC= response.data.import_datetime.slice(-8);
         
+        // Create div element for gif stuff to go in
         var uniqueId = giphyTitle.replace(/\s/g,'');
         var gifDiv = $(".giphyDiv");
         var gifRap = $("<div class='row parent'>");
@@ -174,6 +181,7 @@ function giphyThemes(element) {
     $(".giphyDiv").scrollTop(0); 
 }
 
+// Download a gif!
 function downLoad(element){
     $.ajax({
         url: element.id,
@@ -209,6 +217,8 @@ function fav(element){
 
     
     var today = new Date();
+
+    // Needed to format day and month the same as gif day and month
     var month0 = "";
     var day0 = "";
 
@@ -216,9 +226,9 @@ function fav(element){
     if(today.getDate()+1 < 10) day0 += 0;
     var dateAdded = today.getFullYear()+ "-" + month0 + (today.getMonth()+1) + "-" + day0 + today.getDate(); // To be saved at index 4 of favoritesTags
     var timeAdded = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();        // To be saved at index 5 of favoritesTags
-    
-    
-    //console.log(favorites);
+
+
+    // Quick check for duplicate before adding
     if(!favorites.includes(imgSrc)){
         
         favorites.push(imgSrc);
@@ -243,13 +253,14 @@ function fav(element){
     
 }
 
+// Deletes gif!
 function deleteGif(element){
     
     $(element).parent().parent().parent().remove();
     console.log("Gif deleted");
 }
 
-// Deletes the buttons!
+// Deletes buttons!
 // Also used to removes favorites as parent distance from child is the same
 function deleteBtn(element){
     var tempParent = $(element).parent();
@@ -282,7 +293,7 @@ function generateFavs(){
             console.log("No saved favorites to load"); 
             return;
         }
-        console.log(favorites);
+        
         $.each(favorites, function(i){
             
             var favChild = $("<div class='favChild'>");
