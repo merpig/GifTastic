@@ -148,8 +148,11 @@ function giphyThemes(element) {
         var giphyDateC= response.data.import_datetime.slice(0,10);
         var giphyTimeC= response.data.import_datetime.slice(-8);
         
+
         // Create div element for gif stuff to go in
         var uniqueId = giphyTitle.replace(/\s/g,'');
+        //if(uniqueId==="") uniqueId = btnTheme+gifCount+giphyDateC;
+
         var gifDiv = $(".giphyDiv");
         var gifRap = $("<div class='row parent'>");
         var favDiv = $("<div class='col-sm-3 text-center favDiv'>");
@@ -208,12 +211,17 @@ function fav(element){
     var imgID = $(element).val();
     var imgTag = $("#" + imgID)[0];
     
-    imgSrc = imgTag.src
+    try{
+        imgSrc = imgTag.src
+    } catch{
+        
+    }
 
     var favTitle = $("#" + imgID).attr("gifTitle"); // To be saved at index 0 of favoritesTags
     var favTheme = $("#" + imgID).attr("theme");    // To be saved at index 1 of favoritesTags
     var favDateC = $("#" + imgID).attr("dateC");    // To be saved at index 2 of favoritesTags
     var favTimeC = $("#" + imgID).attr("timeC");    // To be saved at index 3 of favoritesTags
+
 
     
     var today = new Date();

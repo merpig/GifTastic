@@ -25,40 +25,46 @@
     <div class="container">
         <br>
 
-        <div class="jumbotron">
+        <div class="jumbotron jumbotron-fluid" style="background-color: #DDDDDD">
             <h1 class="text-center gifTitle">GiphTastic!</h1>
+            <p class="text-center">Find awesome gifs. Search by theme, save to favorites, download and more!</p>
         </div>
 
         <div class="row">
-            <div class="col-sm-3">
-                <div class="panel text-center  panel-info">
+            
 
-                    <div class="panel-heading">
-                        <h3>GiphTastic Themes</h3>
-                    </div>
-
-                    <div class="panel-body themeDiv">
-                        <input type="text" id="input-theme" style="border-color: #bce8f1"> <button type="submit" class="btn btn-info" id="add-theme"> Submit</button>
-                        <hr>
-
-                        <div class="theme-btns">
-
-                        </div>
-                        
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-sm-5">
+            <div class="col-sm-6">
+                
                 <div class="panel text-center  panel-default">
 
                     <div class="panel-heading">
                         <h3><i class='fa fa-star' ></i> = Favorite, <i class='fa fa-download' ></i> = Download</h3>
                     </div>
 
-                    <div class="panel-body giphyDiv" style="padding-top: 0;">
+                    
+                            <div class="col-sm-4">
+                                    <div class="panel text-center  panel-info">
+                    
+                                        <div class="panel-heading">
+                                            <h3>Themes</h3>
+                                        </div>
+                    
+                                        <div class="panel-body themeDiv">
+                                            <input type="text" id="input-theme" style="border-color: #bce8f1"> <button type="submit" class="btn btn-info" id="add-theme"> Submit</button>
+                                            <hr>
+                    
+                                            <div class="theme-btns">
+                    
+                                        </div>
+                                        
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                    
+
+                    <div class="panel-body col-sm-8 giphyDiv" style="padding-top: 0;">
                         
                         
 
@@ -68,7 +74,7 @@
                 
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <div class="panel text-center  panel-success">
 
                     <div class="panel-heading">

@@ -3,6 +3,14 @@ input{
     width: 100%;
 }
 
+body { 
+    background: url("../images/bg.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 .theme-btns{
     height: max-content;
 }
@@ -19,14 +27,19 @@ input{
 
 .gifFavDiv{
     
-    height: 295px;
+    background-color: #f5f5f5;
     overflow-y: scroll;
 }
 
-.giphyDiv, .themeDiv{
+.panel-body, .giphyDiv, .themeDiv{
     
-    height: 400px;
+    
     overflow-y: scroll;
+}
+
+.themeBtnDiv{
+    width: max-content;
+    float: left;
 }
 
 .imgDiv{
