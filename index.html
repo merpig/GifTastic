@@ -79,11 +79,15 @@
                     <div class="organizer">
                         <a>Sort by: </a>
                         <select name="organizeSelector" onchange="organizeBy(value);" id="organize" style=" background-color: white; height: 34px;">
-                                <option value="AddedDate">Added Date</option>
-                                <option value="CreationDate">Creation Date</option>
-                                <option value="NameAZ">Name A-Z</option>
-                                <option value="NameZA">Name Z-A</option>
-                                <option value="Theme">Theme</option>
+                                <option selected="selected"></option>
+                                <option value="AddedDate(newest)">Added Date(newest)</option>
+                                <option value="AddedDate(oldest)">Added Date(oldest)</option>
+                                <option value="CreationDate(newest)">Creation Date(newest)</option>
+                                <option value="CreationDate(oldest)">Creation Date(oldest)</option>
+                                <option value="TitleAZ">Title A-Z</option>
+                                <option value="TitleZA">Title Z-A</option>
+                                <option value="ThemeAZ">Theme A-Z</option>
+                                <option value="ThemeZA">Theme Z-A</option>
                         </select>
                         <br>
                         <hr>
