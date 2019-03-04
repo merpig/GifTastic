@@ -26,7 +26,7 @@ var queryURL ="https://api.giphy.com/v1/gifs/random?";
 var gifCount = 0;
 
 // Contains all sorting algorithms for favorited gifs
- function organizeBy(myStr){
+function organizeBy(myStr){
     //event.preventDefault();
 
     // Prevent errors if localstorage is empty
@@ -129,7 +129,7 @@ var gifCount = 0;
     localStorage.setItem("favoriteTagList",JSON.stringify( favoritesTags ));
     $(".gifFavDiv").html("");
     generateFavs();
-  }
+}
 
 // Contains the ajax call for giphy api.
 // **Placed outside $(document).ready(...) so that new elements can access func
@@ -320,6 +320,7 @@ function generateFavs(){
     
 }
 
+// Everything to be done after the dom has loaded
 $(document).ready(function() {
     
     // generate fav gifs
